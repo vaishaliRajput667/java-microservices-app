@@ -1,0 +1,11 @@
+   version: 0.2
+   phases:
+     install:
+       runtime-versions:
+         java: corretto11
+     build:
+       commands:
+         - echo Building the Docker image...
+         - docker build -t my-java-app .
+         - docker tag my-java-app:latest <account-id>.dkr.ecr.<region>.amazonaws.com/my-java-app:latest
+         - docker push 471112949264.dkr.ecr.<region>.amazonaws.com/my-java-app:latest
